@@ -1,12 +1,12 @@
 <template>
   <div class="hello">
-    <h1>{{ poem.title }}</h1>
-    <h4>{{ poem.dynasty }} - {{poem.author}}</h4>
+    <!-- <h1>{{ poem.title }}</h1> -->
+    <!-- <h4>{{ poem.dynasty }} &#45; {{poem.author}}</h4> -->
     <pre class="paragraphs">{{ poem.paragraphs }}</pre>
     <av-waveform v-if="poem_audio_url != null"
                  :audio-src="poem_audio_url"
     ></av-waveform>
-    <button class="lucky" v-on:click="lucky_click" v-if="!loading">手气不错</button>
+    <button class="lucky" v-on:click="lucky_click" v-if="!loading">Sample</button>
     <vue-loading
             type="bars"
             color="#d9544e"

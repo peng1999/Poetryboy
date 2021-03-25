@@ -16,11 +16,11 @@ class RandomPoemView(APIView):
     def get(self, request, format=None):
         poem = self.get_random_poem()
 
-        tc = TTSConvert()
-        if not poem.audio:
-            audio_path = tc.convert(poem.paragraphs, poem.id)
-            poem.audio.name = audio_path
-            poem.save()
+        # tc = TTSConvert()
+        # if not poem.audio:
+        #     audio_path = tc.convert(poem.paragraphs, poem.id)
+        #     poem.audio.name = audio_path
+        #     poem.save()
 
         poem_dict = model_to_dict(poem, exclude=["audio"])
         poem_dict["author"] = poem.author.name
